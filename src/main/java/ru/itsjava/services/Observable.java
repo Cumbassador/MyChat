@@ -6,4 +6,6 @@ public interface Observable {
 
     void notifyObservers(String messege);
 
+    void notifyObserversExceptMe(String messege,Observer sender);
+
 }

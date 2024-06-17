@@ -2,9 +2,7 @@ package ru.itsjava.services;
 
 import lombok.SneakyThrows;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -50,4 +48,12 @@ public class ServerServiceImpl implements ServerService{
         }
 
     }
+    public void notifyObserversExceptMe(String messege, Observer sender) {
+        for (Observer observer : observers) {
+            if (!observer.equals(sender)) {
+                observer.notifyMe(messege); // Отправляем сообщение всем, кроме отправителя
+            }
+        }
+    }
+
 }
