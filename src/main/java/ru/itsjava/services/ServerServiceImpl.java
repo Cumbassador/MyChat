@@ -51,7 +51,7 @@ public class ServerServiceImpl implements ServerService{
     public void notifyObserversExceptMe(String messege, Observer sender) {
         for (Observer observer : observers) {
             if (!observer.equals(sender)) {
-                observer.notifyMe(messege); // Отправляем сообщение всем, кроме отправителя
+                observer.notifyMe(messege);
             }
         }
     }
